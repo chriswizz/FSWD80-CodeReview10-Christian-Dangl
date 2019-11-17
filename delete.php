@@ -20,12 +20,12 @@
 		</head>
 
 		<body>
-			<div class="container">
+			<div class="container mt-5">
 				<h3>Do you really want to delete this item?</h3>
 				<form action ="actions/a_delete.php" method="post">
 					<input type="hidden" name="id" value="<?php echo $id ?>" />
-					<button type="submit" class="btn btn-dark btn-sm border">Yes, delete it</button >
-					<a href="index.php"><button type="button" class="btn btn-dark btn-sm border">No, go back</button ></a>
+					<button type="submit" class="btn btn-dark border">Delete</button >
+					<a href="index.php"><button type="button" class="btn btn-dark border">Back to Items</button ></a>
 				</form>
 			</div>
 		</body>
@@ -34,3 +34,4 @@
 		<?php
 	}
 ?>
+

@@ -1,8 +1,8 @@
 <?php
     require_once "actions/db_connect.php";
 
-    if ($_GET['a']=="create") $action = "Create New";
-    if ($_GET['a']=="update") $action = "Update";
+    if ($_GET['action']=="create") $action = "Create New";
+    if ($_GET['action']=="update") $action = "Update";
 
     $sql_authors = "SELECT * FROM authors ORDER BY last_name";
     $sql_publishers = "SELECT * FROM publishers ORDER BY publisher_name";
@@ -42,25 +42,25 @@
     <fieldset>
         <legend><?php echo $action ?> Item</legend>
 
-        <form class="border border-success" action="actions/a_create_update.php" method="post">
+        <form class="border border-success form-group" action="actions/a_create_update.php" method="post">
             <table cellspacing="0" cellpadding="0">
                 <input type="hidden" name="id" value=<?php echo $id; ?>>
                 <tr>
                     <th>Image:</th>
                     <td>
-                      <input type="text" name="image" placeholder="Image Link" value="<?php if ($id<>"") echo $item['image']; ?>" />
+                      <input type="text" class="form-control" name="image" placeholder="Image Link" value="<?php if ($id<>"") echo $item['image']; ?>" />
                     </td>
                 </tr>    
                 <tr>
                     <th>Title:</th>
                     <td>
-                      <input type="text" name="title" placeholder="Title" value="<?php if ($id<>"") echo $item['title']; ?>" />
+                      <input type="text" class="form-control" name="title" placeholder="Title" value="<?php if ($id<>"") echo $item['title']; ?>" />
                     </td>
                 </tr>
                 <tr>
                     <th>Author:</th>
                     <td>
-                        <select type="number" name="author">
+                        <select type="number" class="form-control" name="author">
                             <?php
                                 while ($row = mysqli_fetch_assoc($result_authors)) {
                                     echo "<option ";
@@ -74,25 +74,25 @@
                 <tr>
                     <th>ISBN:</th>
                     <td>
-                      <input type="text" name="isbn" placeholder="ISBN" value="<?php if ($id<>"") echo $item['isbn']; ?>" />
+                      <input type="text" class="form-control" name="isbn" placeholder="ISBN" value="<?php if ($id<>"") echo $item['isbn']; ?>" />
                     </td>
                 </tr>
                 <tr>
                     <th>Description:</th>
                     <td>
-                      <input type="text" name="description" placeholder="Description" value="<?php if ($id<>"") echo $item['description']; ?>" />
+                      <input type="text" class="form-control" name="description" placeholder="Description" value="<?php if ($id<>"") echo $item['description']; ?>" />
                     </td>
                 </tr>
                 <tr>
                     <th>Publish Date:</th>
                     <td>
-                      <input type="date" name="publish_date" placeholder="Publish Date" value="<?php if ($id<>"") echo $item['publish_date']; ?>" />
+                      <input type="date" class="form-control" name="publish_date" placeholder="Publish Date" value="<?php if ($id<>"") echo $item['publish_date']; ?>" />
                     </td>
                 </tr>
                 <tr>
                     <th>Publisher:</th>
                     <td>
-                        <select type="number" name="publisher">
+                        <select type="number" class="form-control" name="publisher">
                             <?php
                                 while ($row = mysqli_fetch_assoc($result_publishers)) {
                                     echo "<option ";
@@ -106,7 +106,7 @@
                 <tr>
                     <th>Type:</th>
                     <td>
-                        <select type="number" name="type">
+                        <select type="number" class="form-control" name="type">
                             <?php
                                 while ($row = mysqli_fetch_assoc($result_types)) {
                                     echo "<option ";
@@ -120,7 +120,7 @@
                 <tr>
                     <th>Genre:</th>
                     <td>
-                        <select type="number" name="genre">
+                        <select type="number" class="form-control" name="genre">
                             <?php
                                 while ($row = mysqli_fetch_assoc($result_genres)) {
                                     echo "<option ";
@@ -132,10 +132,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><button type ="submit" class="btn btn-dark btn-sm border">Submit</button></td>
+                    <td><button type ="submit" class="btn btn-dark border">Submit</button></td>
                 <tr>
                 </tr>
-                    <td><a href="index.php"><button type="button" class="btn btn-dark btn-sm border">Back to Items</button></a></td>
+                    <td><a href="index.php"><button type="button" class="btn btn-dark border">Back to Items</button></a></td>
                 </tr>
             </table>
         </form>

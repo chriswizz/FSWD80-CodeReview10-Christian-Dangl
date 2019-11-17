@@ -11,9 +11,8 @@
 </head>
 
 <body>
-	<div class ="container-fluid">
-			<a href="create_update.php?action=create"><button type="button" class="btnFix btnFixLeft btn btn-danger border">Create New Item</button></a>
-			<a href="publisher_list.php"><button type="button" class="btnFix btnFixRight btn btn-success border">Publisher List</button></a>
+	<div class ="container">
+		<a href="publisher_list.php"><button type="button" class="btnFix btn btn-success border">Back to Publisher List</button></a>
 		<table class="table table-striped tableStickyHead" cellspacing= "0" cellpadding="0">
 			<thead class="thead-dark">
 				<tr>
@@ -24,14 +23,12 @@
 					<th>Publisher</th>
 					<th>Type</th>
 					<th>Genre</th>
-					<th>Show&nbsp;media</th>
-					<th>Update</th>
-					<th>Delete</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				<?php
+					$publisher_id = $_GET['publisher_id'];
 					$sql = "SELECT * FROM media
 							INNER JOIN `authors` ON fk_author = author_id
 							INNER JOIN `publishers` ON fk_publisher = publisher_id
@@ -39,6 +36,7 @@
 							INNER JOIN `types` ON fk_type = type_id
 							INNER JOIN `genres` ON fk_genre = genre_id
 							INNER JOIN `availability` ON fk_available = available_id
+							WHERE publisher_id = $publisher_id
 							ORDER BY title";
 					$result = $connect->query($sql);
 
@@ -55,15 +53,6 @@
 								<td>" . $row['publisher_name'] . "</td>
 								<td>" . $row['type'] . "</td>
 								<td>" . $row['genre'] . "</td>
-								<td>
-									<a href='details.php?id=" . $row['media_id'] . "&image=" . $row['image'] . "&title=" . $row['title'] . "&first_name=" . $row['first_name'] . "&last_name=" . $row['last_name'] . "&isbn=" . $row['isbn'] . "&description=" . $row['description'] . "&publish_date=" . $row['publish_date'] . "&publisher_name=" . $row['publisher_name'] . "&type=" . $row['type'] . "&genre=" . $row['genre'] . "&available=" . $row['available'] . "'><button type='button' class='btn btn-success btn-sm border'>Show&nbsp;media</button></a>
-								</td>
-								<td>
-									<a href='create_update.php?action=update&id=" . $row['media_id'] . "'><button type='button' class='btn btn-success btn-sm border'>Update</button></a>
-								</td>
-								<td>
-									<a href='delete.php?id=" . $row['media_id'] . "'><button type='button' class='btn btn-success btn-sm border'>Delete</button></a>
-								</td>
 							</tr>";
 						}
 					} else {

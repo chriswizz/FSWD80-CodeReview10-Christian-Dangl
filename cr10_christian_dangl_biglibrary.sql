@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 16, 2019 at 10:20 PM
+-- Generation Time: Nov 17, 2019 at 01:06 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -934,7 +934,6 @@ INSERT INTO `media` (`media_id`, `image`, `title`, `fk_author`, `isbn`, `descrip
 (682, 'https://picsum.photos/id/698/200/200', 'Dragon Age: Blood mage no seisen (a.k.a. Dragon Age: Dawn of the Seeker)', 101, '731-3-56-616988-9', 'Revision of Autologous Tissue Substitute in Vas Deferens, External Approach', '2010-04-27', 16, 3, 6, 1),
 (684, 'https://picsum.photos/id/790/200/200', 'Andrei Rublev (Andrey Rublyov)', 97, '481-0-43-962562-0', 'Supplement Right Common Carotid Artery with Synthetic Substitute, Percutaneous Approach', '2013-02-03', 4, 2, 1, 0),
 (685, 'https://picsum.photos/id/424/200/200', 'Running On Karma (Daai Zek Lou)', 140, '916-1-77-106128-5', 'Insertion of Infusion Device into Left Cephalic Vein, Open Approach', '2013-03-07', 30, 2, 1, 0),
-(686, 'https://picsum.photos/id/203/200/200', 'P.S. Your Cat is Dead', 169, '529-1-98-213567-9', 'Reposition Left Sacroiliac Joint with Internal Fixation Device, Open Approach', '2009-08-19', 27, 2, 2, 1),
 (687, 'https://picsum.photos/id/121/200/200', 'Friend of the Deceased, A (Priyatel pokonika)', 190, '236-0-61-308592-3', 'Drainage of Appendix, Via Natural or Artificial Opening Endoscopic', '2016-05-04', 14, 1, 4, 0),
 (688, 'https://picsum.photos/id/700/200/200', 'Mystery on Monster Island', 103, '723-3-97-883635-0', 'Drainage of Left Eustachian Tube, Via Natural or Artificial Opening, Diagnostic', '2018-04-16', 24, 3, 2, 1),
 (690, 'https://picsum.photos/id/185/200/200', 'Quickie, The', 6, '261-1-19-588615-5', 'Muscle Performance Assessment of Musculoskeletal System - Whole Body using Prosthesis', '1994-11-05', 12, 1, 2, 0),
@@ -1052,9 +1051,9 @@ INSERT INTO `media` (`media_id`, `image`, `title`, `fk_author`, `isbn`, `descrip
 (813, 'https://picsum.photos/id/133/200/200', 'Infernal Affairs (Mou gaan dou)', 105, '636-3-11-526922-5', 'Reattachment of Right Knee Tendon, Open Approach', '2000-10-09', 26, 3, 2, 0),
 (814, 'https://picsum.photos/id/396/200/200', 'Doll, The (Lalka)', 5, '337-0-61-580123-3', 'Repair Sacrococcygeal Joint, Percutaneous Approach', '2000-11-14', 25, 3, 6, 1),
 (816, 'https://picsum.photos/id/865/200/200', 'Micki + Maude', 104, '947-2-30-802006-7', 'Dilation of Pulmonary Valve with Drug-eluting Intraluminal Device, Open Approach', '2008-10-31', 13, 3, 2, 0),
-(817, 'https://picsum.photos/id/7/200/200', 'Adrift (Choi Voi)', 91, '599-1-78-792471-6', 'Division of Right Ankle Bursa and Ligament, Percutaneous Endoscopic Approach', '2013-10-05', 48, 3, 2, 0);
+(817, 'https://picsum.photos/id/7/200/200', 'Adrift (Choi Voi)', 91, '599-1-78-792471-6', 'Division of Right Ankle Bursa and Ligament, Percutaneous Endoscopic Approach', '2013-10-05', 48, 3, 2, 0),
+(818, 'https://picsum.photos/id/583/200/200', 'Scary or Die', 150, '903-2-74-705320-4', 'Drainage of Brachial Plexus with Drainage Device, Percutaneous Endoscopic Approach', '1994-05-12', 18, 3, 2, 1);
 INSERT INTO `media` (`media_id`, `image`, `title`, `fk_author`, `isbn`, `description`, `publish_date`, `fk_publisher`, `fk_type`, `fk_genre`, `fk_available`) VALUES
-(818, 'https://picsum.photos/id/583/200/200', 'Scary or Die', 150, '903-2-74-705320-4', 'Drainage of Brachial Plexus with Drainage Device, Percutaneous Endoscopic Approach', '1994-05-12', 18, 3, 2, 1),
 (819, 'https://picsum.photos/id/79/200/200', 'Harsh Times', 187, '532-0-71-498287-8', 'Bypass Coronary Artery, Four or More Arteries from Abdominal Artery with Synthetic Substitute, Percutaneous Endoscopic Approach', '2012-06-16', 46, 1, 1, 1),
 (820, 'https://picsum.photos/id/549/200/200', 'Devil Is a Woman, The', 34, '970-2-56-773075-9', 'Extirpation of Matter from Left Adrenal Gland, Percutaneous Approach', '2017-02-17', 37, 2, 1, 0),
 (821, 'https://picsum.photos/id/500/200/200', 'Police Academy 3: Back in Training', 26, '759-1-60-235991-3', 'Drainage of Left Metacarpophalangeal Joint with Drainage Device, Open Approach', '2014-09-04', 50, 2, 3, 0),
@@ -1406,7 +1405,7 @@ ALTER TABLE `genres`
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `media_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
+  MODIFY `media_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1012;
 
 --
 -- AUTO_INCREMENT for table `publishers`
